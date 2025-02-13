@@ -1,0 +1,119 @@
+{
+    "car_brands": [
+      {
+        "id": "1",
+        "name": "AUDI",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/1/CarSaleType/M"
+      },
+      {
+        "id": "2",
+        "name": "BMW",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/2/CarSaleType/M"
+      },
+      {
+        "id": "4", 
+        "name": "CHEVROLET",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/4/CarSaleType/M"
+      },
+      {
+        "id": "5",
+        "name": "FORD",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/5/CarSaleType/M"
+      },
+      {
+        "id": "6",
+        "name": "HONDA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/6/CarSaleType/M"
+      },
+      {
+        "id": "8",
+        "name": "ISUZU",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/8/CarSaleType/M"
+      },
+      {
+        "id": "9",
+        "name": "KIA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/9/CarSaleType/M"
+      },
+      {
+        "id": "12",
+        "name": "MAZDA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/12/CarSaleType/M"
+      },
+      {
+        "id": "13",
+        "name": "MERCEDES-BENZ",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/13/CarSaleType/M"
+      },
+      {
+        "id": "15",
+        "name": "MITSUBISHI",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/15/CarSaleType/M"
+      },
+      {
+        "id": "16",
+        "name": "NISSAN",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/16/CarSaleType/M"
+      },
+      {
+        "id": "17",
+        "name": "PEUGEOT",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/17/CarSaleType/M"
+      },
+      {
+        "id": "19",
+        "name": "SUZUKI",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/19/CarSaleType/M"
+      },
+      {
+        "id": "20",
+        "name": "TOYOTA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/20/CarSaleType/M"
+      },
+      {
+        "id": "23",
+        "name": "VOLVO",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/23/CarSaleType/M"
+      },
+      {
+        "id": "42",
+        "name": "MG",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/42/CarSaleType/M"
+      },
+      {
+        "id": "44",
+        "name": "OPEL",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/44/CarSaleType/M"
+      },
+      {
+        "id": "47",
+        "name": "PROTON",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/47/CarSaleType/M"
+      },
+      {
+        "id": "53",
+        "name": "SUBARU",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/53/CarSaleType/M"
+      },
+      {
+        "id": "222",
+        "name": "TESLA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/222/CarSaleType/M"
+      },
+      {
+        "id": "242",
+        "name": "BYD",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/242/CarSaleType/M"
+      },
+      {
+        "id": "9045",
+        "name": "ORA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/9045/CarSaleType/M"
+      },
+      {
+        "id": "9046",
+        "name": "NETA",
+        "url": "https://insure.724.co.th/index.php/app/index/fnc/load_car_model/id/9046/CarSaleType/M"
+      }
+    ]
+  }
