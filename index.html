@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
   <link rel="stylesheet" href="./css/style.css">
 
-  <link rel="icon" type="image/png" href="https://724th.com//assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="./img/favicon.png">
   <link rel="stylesheet" href="./css/cookieconsent.css">
 
 
@@ -1101,7 +1101,7 @@
             style="min-height: 150px; max-height: 150px;">
             <div class="filter-detail uk-active">
               <div class="card-list uk-grid-small uk-child-width-1-1@s uk-grid" uk-grid="">
-                <div>
+                <div onclick="connectLine()">
                   <ul class="uk-nav uk-nav-default" uk-nav="">
                     <li class="uk-parent card-item uk-card uk-card-body icon"><a class="void" href="#"><span
                           class="info">ผมรู้ว่าชอบบริษัทไหน</span></a>
@@ -1189,16 +1189,16 @@
                     </li>
                   </ul>
                 </div>
-                <div><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
+                <div onclick="connectLine()"><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
                     onclick="sel_classify(&#39;classify&#39;,2,&#39;ชอบของถูก คุ้มครองดี&#39;,0,&#39;&#39;);"><span
                       class="info">ชอบของถูก คุ้มครองดี</span></a></div>
-                <div><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
+                <div onclick="connectLine()"><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
                     onclick="sel_classify(&#39;classify&#39;,3,&#39;ซ่อมห้างอย่างเดียวเราก็มีนะ&#39;,0,&#39;&#39;);"><span
                       class="info">ซ่อมห้างอย่างเดียวเราก็มีนะ</span></a></div>
-                <div><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
+                <div onclick="connectLine()"><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
                     onclick="sel_classify(&#39;classify&#39;,4,&#39;ประกันที่เคลมง่าย&#39;,0,&#39;&#39;);"><span
                       class="info">ประกันที่เคลมง่าย</span></a></div>
-                <div><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
+                <div onclick="connectLine()"><a class="card-item uk-card uk-card-default uk-card-body void" href="#"
                     onclick="sel_classify(&#39;classify&#39;,5,&#39;ประกันสำหรับคนมีบุตร&#39;,0,&#39;&#39;);"><span
                       class="info">ประกันสำหรับคนมีบุตร</span></a></div>
               </div>
@@ -2127,19 +2127,15 @@
     var page_share = 'enable';    </script>
   <script src="./js/jquery.min.js"></script>
   <script async="async" src="./js/uikit.min.js"></script>
-  <script defer="defer" src="./js/slick.min.js"></script>
-  <script defer="defer" src="./js/icheck.min.js"></script>
-  <script defer="defer" src="./js/mobiscroll.jquery.min.js"></script>
+  <!-- <script defer="defer" src="./js/slick.min.js"></script> -->
+  <!-- <script defer="defer" src="./js/icheck.min.js"></script> -->
+  <!-- <script defer="defer" src="./js/mobiscroll.jquery.min.js"></script> -->
 
   <script src="./js/main.min.js"></script>
 
   <script src="./js/master.js"></script>
-  <script defer="" src="./js/cookieconsent.js"></script>
-  <script defer="" src="./js/cookieconsent-init.js"></script>
-  <script>
-
-  </script>
-
+  <!-- <script defer="" src="./js/cookieconsent.js"></script>
+  <script defer="" src="./js/cookieconsent-init.js"></script> -->
 
   <div id="cc--main" style="position: fixed; z-index: 1000000;" class="c--anim">
     <!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!-->
@@ -2239,7 +2235,23 @@
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 
   <script>
-
+    const LIFF_ID = '2006908124-Yaz72Alz'; // ใส่ LIFF ID ของคุณ
+    const API_URL = 'https://line-push.vercel.app/api/send-message'; // URL ของ Backend
+    liff.init({
+      liffId: '2006908124-Yaz72Alz'
+    });
+    liff.ready.then(() => {
+      if (!liff.isLoggedIn()) {
+        // liff.login();
+      } else {
+        liff.getProfile().then((profile) => {
+          userId = profile.userId;
+          localStorage.setItem('userId', userId);
+          console.log(profile);
+          sendLineMessage(userId);
+        });
+      }
+    });
     async function loadCarData() {
       try {
         const response = await fetch('./js/car.json');
@@ -2259,6 +2271,8 @@
       window.carBrandsData = carData;
     }
     displayCars()
+
+    
     async function selectCar(name) {
       try {
         const car = window.carBrandsData.car_brands.find(c => c.name === name);
@@ -2290,22 +2304,49 @@
                 `;
       }
     }
-    function main() {
+    function connectLine() {
       // 1.liff init
       // 2.get profile
       liff.init({
-        liffId: '2006901784-VeRLM0Z4'
+        liffId: '2006908124-Yaz72Alz'
       });
       liff.ready.then(() => {
         if (!liff.isLoggedIn()) {
           liff.login();
+        } else {
+          liff.getProfile().then((profile) => {
+            userId = profile.userId;
+            localStorage.setItem('userId', userId);
+            console.log(profile);
+            sendLineMessage(userId);
+          });
         }
-        liff.getProfile().then((profile) => {
-          userId = profile.userId;
-          console.log(profile);
-        });
       });
     }
+
+    async function sendLineMessage(userId) {
+    try {
+        const response = await fetch('https://line-push.vercel.app/api/send-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                carBrand: localStorage.getItem('insure_car_brand_name'),
+                carModel: localStorage.getItem('insure_car_model_name'),
+                carYear: localStorage.getItem('insure_car_year_name'),
+                carClass: localStorage.getItem('insure_car_class_name'),
+                userId: userId
+            })
+        });
+        
+        const result = await response.json();
+        console.log('Message sent:', result);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+}
+    
 
   </script>
 
